@@ -1,0 +1,32 @@
+<div class="container">
+<h2>Search History</h2>
+<table id="searchResultsTable" class="table table-striped table-bordered">
+    <thead>
+      <tr>
+        <th>Search Term</th>
+        <th>Search Results</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let historyItem of searchHistory">
+        <td>{{ historyItem.searchTerm }}</td>
+        <td>
+            <div class="card">
+                <div class="row g-0">
+                    <div class="col-md-1">
+                <img class="card-img-top" [src]="historyItem?.avatar_url" alt="My Image">
+            </div>
+            <div class="col-md-11">
+                <div class="card-body text-center">
+                    <p class="card-text">Name:<span> {{historyItem?.name}}</span></p>
+                    <p>Username:<span> {{historyItem?.login}}</span></p>
+                    <p>Joined on: <span class="badge rounded-pill bg-warning text-dark">{{historyItem?.created_at|date}}</span></p>
+                </div>
+            </div>
+            </div>
+            </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
